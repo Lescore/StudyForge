@@ -1,0 +1,111 @@
+/* Informatik-Werkzeuge – gemeinsame Gestaltung.
+   Modulspezifische Regeln liegen in css/tools/<modul>.css und werden hier eingebunden. */
+@import url("tools/data.css");
+@import url("tools/arch.css");
+@import url("tools/net.css");
+@import url("tools/os.css");
+@import url("tools/prog.css");
+@import url("tools/db.css");
+@import url("tools/web.css");
+@import url("tools/sec.css");
+@import url("tools/tech.css");
+
+/* ---------------------------------------------------------------- Übersicht */
+.tools-toolbar { display: flex; gap: .6rem; flex-wrap: wrap; align-items: center; margin-bottom: 1rem; }
+.tools-search { position: relative; flex: 1; min-width: 220px; max-width: 460px; }
+.tools-search .input { width: 100%; padding-left: 2.1rem; }
+.tools-search .icon { position: absolute; left: .7rem; top: 50%; transform: translateY(-50%); color: var(--faint); width: 1rem; height: 1rem; }
+.tools-cats { display: flex; gap: .35rem; flex-wrap: wrap; margin-bottom: 1.2rem; }
+.tools-cats .chip { display: inline-flex; align-items: center; gap: .3rem; }
+.tools-cats .chip .count { opacity: .7; font-size: .7rem; }
+.tool-cat-grid { display: grid; gap: .9rem; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+.tool-cat-card { display: flex; flex-direction: column; gap: .35rem; text-decoration: none; color: inherit; }
+.tool-cat-card:hover { border-color: var(--accent); text-decoration: none; }
+.tool-cat-card h2 { font-size: 1rem; margin: 0; display: flex; align-items: center; gap: .45rem; }
+.tool-cat-card h2 .icon { color: var(--accent); }
+.tool-cat-card p { margin: 0; }
+.tool-grid { display: grid; gap: .75rem; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+.tool-card { position: relative; display: flex; flex-direction: column; gap: .3rem; padding: .85rem .95rem; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); color: inherit; text-decoration: none; min-height: 96px; }
+.tool-card:hover, .tool-card:focus-visible { border-color: var(--accent); text-decoration: none; }
+.tool-card .tool-card-title { font-weight: 600; font-size: .92rem; padding-right: 1.8rem; }
+.tool-card .tool-card-desc { font-size: .8rem; color: var(--muted); line-height: 1.45; }
+.tool-card .tool-card-cat { font-size: .7rem; color: var(--faint); margin-top: auto; }
+.tool-fav { position: absolute; top: .45rem; right: .45rem; width: 28px; height: 28px; color: var(--faint); }
+.tool-fav.active { color: var(--warning); }
+.tool-fav.active .icon { fill: currentColor; }
+.tools-section-title { font-size: .95rem; margin: 1.4rem 0 .6rem; }
+
+/* ---------------------------------------------------------------- Detailseite */
+.tool-head-actions { display: flex; gap: .4rem; align-items: center; flex-wrap: wrap; }
+.tool-body { display: grid; gap: 1rem; min-width: 0; }
+.tool-panel-card { min-width: 0; }
+.tool-panel-title { font-size: 1rem; margin: 0 0 .8rem; }
+.tool-layout { display: grid; gap: 1rem; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); align-items: start; }
+.tool-layout > div { min-width: 0; }
+@media (max-width: 960px) { .tool-layout { grid-template-columns: minmax(0, 1fr); } }
+.tool-inputs .form-row { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
+.field-wide { grid-column: 1 / -1; }
+.tool-actions { margin: .4rem 0 .2rem; gap: .35rem; }
+.tool-seg { border: 0; padding: 0; margin: 0 0 .75rem; min-width: 0; }
+.tool-seg legend { font-size: .8rem; font-weight: 600; color: var(--text-soft); margin-bottom: .35rem; padding: 0; }
+
+.tool-result { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: .3rem .9rem; margin: 0; font-size: .86rem; background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: .75rem .85rem; }
+.tool-result dt { color: var(--muted); padding-top: .15rem; }
+.tool-result dd { margin: 0; display: flex; align-items: flex-start; gap: .3rem; min-width: 0; }
+.tool-result dd .tool-value { overflow-wrap: anywhere; min-width: 0; padding-top: .15rem; }
+.tool-result dd.strong .tool-value { font-weight: 700; font-size: 1.02rem; color: var(--text); }
+.tool-result .tool-copy { width: 24px; height: 24px; flex: none; opacity: .65; }
+.tool-result .tool-copy:hover, .tool-result .tool-copy:focus-visible { opacity: 1; }
+@media (max-width: 560px) {
+  .tool-result { grid-template-columns: minmax(0, 1fr); }
+  .tool-result dt { padding-top: .4rem; }
+}
+.tool-copy .icon { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 2; }
+
+.tool-steps, .tool-explain { margin-top: .8rem; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--surface); }
+.tool-steps > summary, .tool-explain > summary { cursor: pointer; padding: .55rem .75rem; font-weight: 600; font-size: .85rem; }
+.tool-steps ol { margin: 0; padding: 0 .9rem .7rem 2.2rem; font-size: .83rem; line-height: 1.65; }
+.tool-steps li { overflow-wrap: anywhere; }
+.tool-steps code, .tool-explain code { font-family: var(--font-mono); font-size: .8rem; background: var(--surface-2); padding: .05rem .25rem; border-radius: 4px; }
+.tool-explain-body { padding: 0 .85rem .75rem; font-size: .84rem; line-height: 1.6; color: var(--text-soft); }
+.tool-explain-body p { margin: .4rem 0; }
+.tool-explain-body ul { margin: .3rem 0; padding-left: 1.2rem; }
+
+.tool-notice { border-radius: var(--radius-sm); padding: .55rem .75rem; font-size: .83rem; line-height: 1.5; margin: .6rem 0; border: 1px solid transparent; }
+.tool-notice.info { background: var(--info-soft); color: var(--info); }
+.tool-notice.warning, .tool-notice.assumption { background: var(--warning-soft); color: var(--warning); }
+.tool-notice.error { background: var(--danger-soft); color: var(--danger); }
+.tool-notice.success { background: var(--success-soft); color: var(--success); }
+html[data-theme="dark"] .tool-notice.info, html[data-theme="dark"] .tool-notice.warning, html[data-theme="dark"] .tool-notice.assumption,
+html[data-theme="dark"] .tool-notice.error, html[data-theme="dark"] .tool-notice.success { border-color: color-mix(in srgb, currentColor 25%, transparent); }
+
+.tool-table { font-size: .82rem; }
+.tool-table td, .tool-table th { padding: .4rem .6rem; }
+.tool-table td { font-family: var(--font-mono); }
+.tool-table tr.highlight td { background: var(--accent-softer); }
+.tool-badge-sim { display: inline-flex; align-items: center; gap: .3rem; font-size: .72rem; font-weight: 600; padding: .15rem .5rem; border-radius: 999px; background: var(--info-soft); color: var(--info); }
+
+/* ---------------------------------------------------------------- Simulation */
+.stepper { display: flex; flex-wrap: wrap; gap: .35rem; align-items: center; margin: .6rem 0; }
+.stepper-speed { display: inline-flex; align-items: center; gap: .3rem; }
+.stepper-speed .select { width: auto; padding-top: .2rem; padding-bottom: .2rem; }
+.stepper-status { margin-left: auto; }
+@media (max-width: 560px) { .stepper-status { margin-left: 0; width: 100%; } }
+
+/* Bits als anklickbare Zellen – von mehreren Werkzeugen genutzt */
+.bit-row { display: flex; flex-wrap: wrap; gap: .5rem; }
+.bit-byte { display: flex; gap: .2rem; }
+.bit-nibble { display: flex; gap: 2px; }
+.bit-cell { width: 26px; height: 32px; border-radius: 5px; border: 1px solid var(--border-strong); background: var(--surface); font-family: var(--font-mono); font-size: .85rem; cursor: pointer; display: inline-flex; flex-direction: column; align-items: center; justify-content: center; line-height: 1; padding: 0; color: var(--text); }
+.bit-cell small { font-size: .55rem; color: var(--faint); margin-top: 2px; }
+.bit-cell.on { background: var(--accent); border-color: var(--accent); color: var(--accent-contrast); }
+.bit-cell.on small { color: color-mix(in srgb, var(--accent-contrast) 75%, transparent); }
+.bit-cell.sign { box-shadow: inset 0 -3px 0 var(--warning); }
+.bit-cell:focus-visible { outline: var(--focus); outline-offset: 1px; }
+.bit-cell[disabled] { cursor: default; }
+
+.mono-block { font-family: var(--font-mono); font-size: .82rem; background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: .6rem .75rem; overflow-x: auto; white-space: pre; line-height: 1.55; }
+.mono-wrap { white-space: pre-wrap; overflow-wrap: anywhere; }
+
+/* Titelbereich nie zusammendrücken lassen – die Knöpfe rutschen sonst daneben und lassen nur wenige Pixel übrig */
+.tool-page-head .page-heading { flex: 1 1 18rem; }

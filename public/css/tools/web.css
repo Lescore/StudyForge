@@ -1,0 +1,58 @@
+/* Werkzeugmodul web */
+.web-sub { font-size: .85rem; margin: 1rem 0 .4rem; color: var(--text-soft); }
+.web-out-head { margin: .8rem 0 .3rem; gap: .5rem; }
+.web-pre { max-height: 32rem; overflow: auto; margin: 0; }
+.web-pre-short { max-height: 12rem; }
+.web-json-context { margin-top: .4rem; }
+.web-file { margin-top: 1rem; padding-top: .6rem; border-top: 1px solid var(--border); }
+.web-file .input { margin-top: .3rem; width: 100%; }
+
+/* Diff */
+.web-diff-inputs { display: grid; gap: .8rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.web-diff-inputs .textarea { font-size: .82rem; }
+.web-diff-options { gap: 1.2rem; align-items: flex-start; flex-wrap: wrap; }
+.web-diff-stats { gap: .35rem; flex-wrap: wrap; margin-bottom: .4rem; }
+.web-diff-unified { padding: .3rem 0; white-space: pre; }
+.web-diff-hunk { color: var(--info); background: var(--info-soft); padding: 0 .75rem; }
+.web-diff-line { padding: 0 .75rem 0 .4rem; }
+.web-diff-sign { display: inline-block; width: 1.2em; color: var(--muted); user-select: none; }
+.web-diff-line.add { background: var(--success-soft); }
+.web-diff-line.add .web-diff-sign { color: var(--success); }
+.web-diff-line.del { background: var(--danger-soft); }
+.web-diff-line.del .web-diff-sign { color: var(--danger); }
+.web-diff-side { width: 100%; border-collapse: collapse; font-family: var(--font-mono); font-size: .78rem; table-layout: fixed; }
+.web-diff-side th { text-align: left; font-family: var(--font-sans); font-size: .78rem; padding: .3rem .5rem; background: var(--surface-2); border-bottom: 1px solid var(--border); }
+.web-diff-side td { padding: .05rem .4rem; vertical-align: top; white-space: pre-wrap; overflow-wrap: anywhere; }
+.web-diff-side .web-diff-n { width: 3rem; text-align: right; color: var(--faint); user-select: none; background: var(--surface-2); }
+.web-diff-side .web-diff-t.add { background: var(--success-soft); }
+.web-diff-side .web-diff-t.del { background: var(--danger-soft); }
+.web-diff-side .web-diff-t.empty { background: var(--surface-2); }
+@media (max-width: 560px) { .web-diff-side .web-diff-n { width: 2rem; } .web-diff-side { font-size: .72rem; } }
+
+/* UUID */
+.web-uuid-actions { margin: .2rem 0 .8rem; }
+.web-uuid-list { line-height: 1.7; }
+
+/* HTTP-Statuscodes */
+.web-status-list { list-style: none; margin: 0; padding: 0; display: grid; gap: .5rem; }
+.web-status { border: 1px solid var(--border); border-radius: var(--radius-sm); padding: .55rem .75rem; background: var(--surface); }
+.web-status-head { display: flex; align-items: center; gap: .5rem; flex-wrap: wrap; margin-bottom: .2rem; }
+.web-status-code { font-weight: 700; font-size: .95rem; padding: .05rem .45rem; border-radius: 6px; background: var(--surface-2); }
+.web-status-1 .web-status-code { background: var(--surface-2); color: var(--muted); }
+.web-status-2 .web-status-code { background: var(--success-soft); color: var(--success); }
+.web-status-3 .web-status-code { background: var(--info-soft); color: var(--info); }
+.web-status-4 .web-status-code { background: var(--warning-soft); color: var(--warning); }
+.web-status-5 .web-status-code { background: var(--danger-soft); color: var(--danger); }
+.web-status-ref { margin-left: auto; }
+.web-status .small { line-height: 1.5; }
+
+/* MIME */
+.web-mime-table td { white-space: normal; }
+.web-mime-table td:first-child { white-space: nowrap; }
+.web-mime-type { overflow-wrap: anywhere; }
+.web-mime-desc { font-family: var(--font-sans); }
+@media (max-width: 560px) {
+  .web-mime-table thead { display: none; }
+  .web-mime-table tr { display: block; padding: .4rem 0; border-bottom: 1px solid var(--border); }
+  .web-mime-table td { display: block; padding: .1rem .5rem; border: 0; }
+}

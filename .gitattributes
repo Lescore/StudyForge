@@ -1,0 +1,16 @@
+# Zeilenenden fest vorgeben, damit die Skripte nach dem Klonen auf jedem System laufen
+* text=auto eol=lf
+*.cmd text eol=crlf
+*.bat text eol=crlf
+*.ps1 text eol=crlf
+*.sh  text eol=lf
+
+# Binärdateien nie verändern
+*.png  binary
+*.ico  binary
+*.db   binary
+*.zip  binary
+*.pdf  binary
+*.woff binary
+*.woff2 binary
+*.ttf  binary

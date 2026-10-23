@@ -1,0 +1,43 @@
+/* Werkzeugmodul db */
+
+/* SQL-Spielplatz */
+#db-sql { white-space: pre; overflow-wrap: normal; overflow-x: auto; min-height: 14rem; font-size: .85rem; line-height: 1.5; tab-size: 2; resize: vertical; }
+.db-run-row { gap: .5rem; align-items: center; margin: .2rem 0 .6rem; }
+.db-examples { display: flex; flex-wrap: wrap; gap: .35rem; align-items: center; margin-bottom: .4rem; }
+.db-result { margin-bottom: 1rem; min-width: 0; }
+.db-result-head { display: flex; gap: .5rem; align-items: center; flex-wrap: wrap; min-width: 0; }
+.db-result-sql { font-family: var(--font-mono); font-size: .75rem; color: var(--muted); overflow-wrap: anywhere; min-width: 0; }
+.db-result-info { margin: .3rem 0; }
+.db-table td { white-space: pre; max-width: 28rem; overflow: hidden; text-overflow: ellipsis; }
+.db-null { color: var(--faint); font-style: italic; font-size: .75rem; letter-spacing: .03em; }
+.db-num { color: var(--info); }
+.db-blob { color: var(--warning); }
+.db-schema { display: grid; gap: .6rem; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+.db-schema-table { background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: .5rem .65rem; min-width: 0; }
+.db-schema-name { display: flex; align-items: center; gap: .4rem; flex-wrap: wrap; }
+.db-schema-name .btn { margin-left: auto; padding: .1rem .45rem; font-size: .7rem; }
+.db-schema-table ul { list-style: none; margin: .35rem 0 0; padding: 0; font-size: .78rem; font-family: var(--font-mono); line-height: 1.7; }
+.db-schema-table li { overflow-wrap: anywhere; }
+.db-key { font-size: .62rem; padding: 0 .35rem; font-family: var(--font-sans); }
+.db-pk { text-decoration: underline; text-underline-offset: 3px; font-weight: 700; }
+
+/* Normalisierung */
+.db-step-title { font-size: 1rem; margin: .6rem 0 .5rem; display: flex; gap: .5rem; align-items: baseline; flex-wrap: wrap; }
+.db-step-why { display: grid; gap: .6rem 1rem; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: .5rem .8rem; }
+.db-step-why ul { margin: .3rem 0; padding-left: 1.1rem; }
+.db-step-why p { margin: .3rem 0; }
+.db-fd { font-family: var(--font-mono); font-size: .78rem; background: var(--surface-2); border: 1px solid var(--border); padding: .05rem .35rem; border-radius: 4px; display: inline-block; margin: .1rem 0; }
+.db-nf-tables { display: grid; gap: .9rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.db-nf-table { min-width: 0; }
+.db-nf-table-head { display: flex; gap: .5rem; align-items: center; flex-wrap: wrap; margin-bottom: .3rem; }
+.db-nf th { white-space: nowrap; }
+.db-mini { font-size: .6rem; font-weight: 600; color: var(--accent); background: var(--accent-softer); border: 1px solid var(--border); border-radius: 4px; padding: 0 .25rem; font-family: var(--font-sans); }
+.db-mini-fk { color: var(--info); background: var(--info-soft); }
+.db-multi { display: flex; flex-direction: column; gap: .15rem; }
+.db-multi span { background: var(--warning-soft); color: var(--text); border-radius: 4px; padding: 0 .3rem; white-space: nowrap; }
+.db-fds { margin: .3rem 0 0; }
+.db-fds code { font-size: .72rem; }
+.db-anomalies { margin-top: .8rem; }
+.db-nf-checks { display: flex; gap: .35rem; flex-wrap: wrap; margin: .6rem 0; }
+.db-violations { margin: .2rem 0 .6rem; padding-left: 1.2rem; line-height: 1.55; }
+.db-violations code { font-family: var(--font-mono); font-size: .78rem; }

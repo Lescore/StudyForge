@@ -1,0 +1,9 @@
+/* Werkzeugmodul tech */
+.tech-item { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr) auto; gap: .4rem; align-items: end; }
+.tech-item .field { margin: 0; }
+.tech-remove { width: 34px; height: 34px; margin-bottom: 2px; }
+@media (max-width: 480px) {
+  .tech-item { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto; padding-bottom: .5rem; border-bottom: 1px solid var(--border); }
+  .tech-item .field:first-child { grid-column: 1 / -1; }
+}
+.tech-tables .table-wrap { margin: 0; }

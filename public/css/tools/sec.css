@@ -1,0 +1,16 @@
+/* Werkzeugmodul sec */
+.sec-algos { display: flex; flex-wrap: wrap; gap: .4rem 1rem; }
+.sec-classes { gap: .45rem; }
+.sec-classes .field { margin: 0 0 0 1.5rem; }
+.sec-notes { margin: .3rem 0 0; padding-left: 1.2rem; }
+.sec-sub { font-size: .9rem; margin: 1rem 0 .4rem; }
+.sec-compare td:first-child, .sec-table td { font-family: inherit; }
+.sec-table td { min-width: 120px; vertical-align: top; }
+.sec-demos { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); align-items: start; }
+.sec-demos > * { min-width: 0; }
+.sec-demo .tool-result { grid-template-columns: minmax(0, 1fr); }
+.sec-demo .tool-result dt { padding-top: .35rem; }
+.sec-buttons { flex-wrap: wrap; gap: .35rem; margin: .4rem 0 .6rem; }
+.sec-hash { font-size: .76rem; margin: .4rem 0; }
+.sec-diff { background: var(--warning-soft); color: var(--warning); border-radius: 2px; padding: 0; }
+.sec-brute { max-height: 320px; }

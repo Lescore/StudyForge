@@ -1,0 +1,25 @@
+name: Tests
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.x'
+      - name: Setup-Prüfung
+        run: node --disable-warning=ExperimentalWarning scripts/setup-check.js
+      - name: Tests
+        run: npm test
+      - name: Offline-Prüfung
+        run: npm run check:offline
+      - name: Shell-Skripte (Syntax)
+        run: for f in *.sh; do sh -n "$f"; done

@@ -1,0 +1,19 @@
+{
+  "name": "studyforge",
+  "version": "1.2.0",
+  "private": true,
+  "description": "StudyForge – persönliches, offline-first Lernzentrum für das Informatikstudium",
+  "type": "module",
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "scripts": {
+    "start": "node scripts/start.js",
+    "stop": "node scripts/stop.js",
+    "server": "node server/server.js",
+    "test": "node --disable-warning=ExperimentalWarning --test \"test/*.test.js\"",
+    "check:offline": "node scripts/check-offline.js"
+  },
+  "keywords": ["lernen", "karteikarten", "fsrs", "offline", "notizen"],
+  "license": "MIT"
+}

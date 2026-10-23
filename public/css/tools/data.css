@@ -1,0 +1,24 @@
+/* Werkzeugmodul data */
+.data-sub { font-size: .85rem; margin: 1rem 0 .4rem; color: var(--text-soft); }
+.data-sub:first-child { margin-top: 0; }
+.data-glyph { font-family: var(--font-sans); font-size: 1.15rem; }
+
+/* Binärarithmetik: Spalten rechtsbündig untereinander */
+.data-arith { display: grid; gap: .15rem; background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: .6rem .8rem; overflow-x: auto; font-size: .9rem; }
+.data-arith-row { display: grid; grid-template-columns: 8rem 1fr; gap: .6rem; white-space: nowrap; }
+.data-arith-row > span:last-child { letter-spacing: .08em; }
+.data-arith-row:last-child { border-top: 1px solid var(--border-strong); padding-top: .2rem; font-weight: 700; }
+@media (max-width: 560px) { .data-arith-row { grid-template-columns: 5.5rem 1fr; } }
+
+/* IEEE 754: Bitfelder farbig */
+.data-ieee { display: flex; flex-wrap: wrap; font-size: .9rem; letter-spacing: .06em; overflow-wrap: anywhere; word-break: break-all; }
+.data-ieee span { padding: .25rem .3rem; border-radius: 4px; }
+.data-ieee-sign { background: var(--warning-soft); color: var(--warning); }
+.data-ieee-exp { background: var(--info-soft); color: var(--info); }
+.data-ieee-frac { background: var(--success-soft); color: var(--success); }
+.badge.data-ieee-sign, .badge.data-ieee-exp, .badge.data-ieee-frac { border-color: transparent; }
+
+/* Struct-Layout: ein Kästchen je Byte */
+.data-memmap { display: flex; flex-wrap: wrap; gap: 2px; }
+.data-mem { width: 18px; height: 18px; border-radius: 3px; background: var(--accent-soft); color: var(--accent); font-size: .65rem; font-family: var(--font-mono); display: inline-flex; align-items: center; justify-content: center; }
+.data-mem.pad { background: repeating-linear-gradient(45deg, var(--surface-3), var(--surface-3) 3px, var(--surface) 3px, var(--surface) 6px); border: 1px solid var(--border); }

@@ -1,0 +1,21 @@
+# Lokale Daten (Notizen, Anhänge, Backups) bleiben auf dem Gerät.
+data/
+*.log
+
+# Portable Node-Version von setup.sh / setup.cmd
+runtime/
+
+# Falls doch einmal Abhängigkeiten installiert werden:
+node_modules/
+
+# Persönliche Arbeitsdateien und Werkzeug-Caches (nicht Teil des Projekts)
+Alterprompthistory.md
+Verbesserung/
+.impeccable/
+
+# Betriebssystem / Editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/

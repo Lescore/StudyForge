@@ -1,0 +1,73 @@
+/* Werkzeugmodul os – Betriebssysteme & Linux */
+
+/* Prozess-/Farbpalette: Hintergrund aus Farbe und Fläche gemischt, damit hell und dunkel lesbar bleiben */
+.os-c-indigo { --os-c: var(--c-indigo); }
+.os-c-teal { --os-c: var(--c-teal); }
+.os-c-amber { --os-c: var(--c-amber); }
+.os-c-rose { --os-c: var(--c-rose); }
+.os-c-violet { --os-c: var(--c-violet); }
+.os-c-green { --os-c: var(--c-green); }
+.os-c-orange { --os-c: var(--c-orange); }
+.os-c-slate { --os-c: var(--c-slate); }
+
+/* ---------------------------------------------------------------- Dateirechte */
+.os-perm-matrix { margin: .4rem 0 .6rem; }
+.os-perm-matrix th[scope="row"] { font-weight: 600; white-space: nowrap; font-family: var(--font-sans); }
+.os-perm-matrix td, .os-perm-matrix th { text-align: center; vertical-align: middle; padding: .35rem .4rem; }
+.os-perm-matrix th[scope="row"] { text-align: left; }
+.os-perm-matrix input[type="checkbox"] { width: 1.1rem; height: 1.1rem; accent-color: var(--accent); cursor: pointer; }
+.os-perm-matrix input[type="checkbox"]:focus-visible { outline: var(--focus); outline-offset: 2px; }
+.os-special { display: inline-flex; align-items: center; gap: .35rem; white-space: nowrap; font-family: var(--font-sans); font-size: .78rem; cursor: pointer; }
+.tool-table.os-perm-explain td:last-child { font-family: var(--font-sans); white-space: normal; min-width: 12rem; }
+
+/* ---------------------------------------------------------------- Befehle */
+.os-cmd-cols { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); align-items: start; }
+.os-cmd-col { display: grid; gap: .6rem; min-width: 0; }
+.os-cmd-plat { font-size: .8rem; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); margin: 0; padding-bottom: .3rem; border-bottom: 1px solid var(--border); }
+.os-cmd { border: 1px solid var(--border); border-radius: var(--radius-sm); padding: .6rem .7rem; background: var(--surface); min-width: 0; }
+.os-cmd-danger { border-color: color-mix(in srgb, var(--warning) 55%, var(--border)); }
+.os-cmd-head { display: flex; flex-wrap: wrap; gap: .4rem; align-items: center; justify-content: space-between; }
+.os-cmd-name { font-family: var(--font-mono); font-weight: 700; font-size: .88rem; overflow-wrap: anywhere; }
+.os-cmd-purpose { margin: .3rem 0; font-size: .84rem; }
+.os-cmd-example { display: flex; align-items: flex-start; gap: .3rem; background: var(--surface-2); border: 1px solid var(--border); border-radius: 6px; padding: .3rem .4rem .3rem .55rem; }
+.os-cmd-example code { flex: 1; min-width: 0; font-family: var(--font-mono); font-size: .8rem; overflow-wrap: anywhere; padding-top: .2rem; }
+.os-cmd-example .tool-copy { width: 26px; height: 26px; flex: none; }
+.os-cmd-note { margin: .35rem 0 0; }
+.os-cmd .tool-notice { margin: .4rem 0 0; }
+
+/* ---------------------------------------------------------------- Scheduling */
+.os-proc-table td { padding: .25rem .2rem; }
+.os-proc-table .input { padding: .3rem .3rem; min-width: 2.4rem; width: 100%; }
+.os-proc-table td:first-child .input { min-width: 3rem; }
+.os-proc-table th { padding: .4rem .35rem; }
+.os-proc-table abbr { text-decoration: none; }
+.os-sub { font-size: .85rem; margin: 0 0 .4rem; color: var(--text-soft); }
+.os-gantt-wrap { overflow-x: auto; padding-bottom: 1.3rem; margin-bottom: .6rem; }
+.os-gantt { display: flex; position: relative; height: 42px; border: 1px solid var(--border-strong); border-radius: 6px; }
+.os-gantt-seg { position: relative; min-width: 0; display: flex; align-items: center; justify-content: center; background: color-mix(in srgb, var(--os-c, var(--c-slate)) 38%, var(--surface)); border-right: 1px solid var(--border-strong); }
+.os-gantt-seg:last-of-type { border-right: 0; }
+.os-gantt-idle { background: repeating-linear-gradient(45deg, var(--surface-2), var(--surface-2) 5px, var(--surface) 5px, var(--surface) 10px); }
+.os-gantt-idle .os-gantt-label { color: var(--muted); font-style: italic; }
+.os-gantt-future { opacity: .35; }
+.os-gantt-label { font-family: var(--font-mono); font-size: .76rem; font-weight: 700; color: var(--text); overflow: hidden; text-overflow: clip; white-space: nowrap; }
+.os-gantt-t { position: absolute; left: -1px; bottom: -1.25rem; font-family: var(--font-mono); font-size: .68rem; color: var(--muted); transform: translateX(-50%); }
+.os-gantt-seg:first-child .os-gantt-t { transform: none; }
+.os-gantt-end { position: absolute; right: -1px; bottom: -1.25rem; font-family: var(--font-mono); font-size: .68rem; color: var(--muted); }
+.os-dot { display: inline-block; width: .65rem; height: .65rem; border-radius: 50%; margin-right: .35rem; background: var(--os-c); vertical-align: baseline; }
+.os-chip { display: inline-block; font-family: var(--font-mono); font-size: .78rem; font-weight: 700; padding: .1rem .45rem; border-radius: 999px; border: 1px solid var(--os-c); background: color-mix(in srgb, var(--os-c) 22%, var(--surface)); color: var(--text); }
+.os-queue { flex-wrap: wrap; align-items: center; gap: .3rem; }
+.os-frame-time { margin: .2rem 0 .5rem; font-size: .88rem; }
+.os-frame dd { align-items: center; flex-wrap: wrap; gap: .3rem; }
+
+/* ---------------------------------------------------------------- RAID & Backup */
+.tool-table.os-raid-table td { font-family: var(--font-sans); min-width: 7rem; }
+.tool-table.os-raid-table td:first-child { font-weight: 700; white-space: nowrap; min-width: 0; }
+.tool-table.os-raid-table td:nth-child(3), .tool-table.os-raid-table td:nth-child(4) { font-family: var(--font-mono); white-space: nowrap; min-width: 0; }
+.tool-table.os-raid-table td:nth-child(2), .tool-table.os-raid-table td:last-child { min-width: 12rem; }
+.os-bk-table td { padding: .25rem .35rem; }
+.os-bk-table .select, .os-bk-table .input { padding: .3rem .4rem; width: 100%; min-width: 5rem; }
+.tool-table.os-bk-result td { font-family: var(--font-sans); }
+.os-list { margin: 0 0 .4rem; padding-left: 1.2rem; line-height: 1.7; font-size: .88rem; }
+.tool-table.os-text-table td { font-family: var(--font-sans); min-width: 8rem; }
+.tool-table.os-text-table td:first-child { font-weight: 700; min-width: 0; }
+.os-bk-table abbr { text-decoration: none; }
